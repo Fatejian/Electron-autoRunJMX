@@ -1,0 +1,33 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "my-electron-app",
+  "author": "Ken",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.example.my-electron-app",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "./**/*",
+      "!dist"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "asar": false
+  },
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.14.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  }
+}
