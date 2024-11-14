@@ -1,0 +1,55 @@
+# Node.js and NPM
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn.lock
+package-lock.json
+
+# Electron Builder
+dist/
+out/
+*.asar
+
+# Development tools
+.vscode/
+.idea/
+*.iml
+*.idea
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs and Temp Files
+logs/
+*.log
+*.tmp
+*.swp
+*.bak
+*.temp
+
+# Build Artifacts
+*.dll
+*.exe
+*.map
+*.pdb
+*.so
+*.dylib
+
+# Test Results
+coverage/
+test-results/
+
+# JMeter
+jmeter.log
+results.jtl
+
+# Custom Configuration Files
+.config/
+.env
+
+# Other
+*.sublime-project
+*.sublime-workspace
