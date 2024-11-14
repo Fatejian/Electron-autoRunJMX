@@ -1,6 +1,6 @@
 # Electron-autoRunJMX
 
-[![GitHub](https4://img.shields.io/github/license/Fatejian/Electron-autoRunJMX)](https://github.com/Fatejian/Electron-autoRunJMX/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/Fatejian/Electron-autoRunJMX.svg)](https://github.com/Fatejian/Electron-autoRunJMX/blob/master/LICENSE)
 
 Electron-autoRunJMX 是一个基于 Electron 构建的桌面应用，旨在自动化 JMeter 测试脚本的执行。该应用提供了一个简洁的用户界面，使用户可以轻松地管理和运行 JMeter 测试脚本，并查看测试结果。
 
@@ -24,14 +24,12 @@ Electron-autoRunJMX 是一个基于 Electron 构建的桌面应用，旨在自�
 ### 安装
 
 1. **克隆仓库**：
-
    ```sh
    git clone https://github.com/Fatejian/Electron-autoRunJMX.git
    cd Electron-autoRunJMX
    ```
 
 2. **安装依赖**：
-
    ```sh
    npm install
    ```
@@ -46,13 +44,11 @@ Electron-autoRunJMX 是一个基于 Electron 构建的桌面应用，旨在自�
 要构建应用的可执行文件，可以使用以下命令：
 
 1. **构建 Windows 版本**：
-
    ```sh
    npm run build:win
    ```
 
 2. **构建 macOS 版本**：
-
    ```sh
    npm run build:mac
    ```
@@ -84,36 +80,63 @@ Electron-autoRunJMX 是一个基于 Electron 构建的桌面应用，旨在自�
 为了确保 JMX 文件能够顺利执行，请确保以下条件已满足：
 
 1. **安装 JMeter**：
-
    - 下载并安装 Apache JMeter：[下载链接](https://jmeter.apache.org/download_jmeter.cgi)
    - 将 JMeter 的安装路径添加到系统环境变量中。例如，在 Windows 上，可以将 `C:\path\to\jmeter\bin` 添加到 `PATH` 环境变量中。
 
 2. **准备 JMX 文件**：
-
    - 确保 JMX 文件格式正确，并且包含所有必要的测试计划和配置。
    - 如果 JMX 文件依赖于外部数据文件（如 CSV 文件），请确保这些文件的路径正确无误。
 
 3. **配置 JMeter 参数**：
    - 在应用的“配置参数”选项卡中，设置 JMeter 的参数和环境变量。例如，可以设置 JMeter 的 JVM 参数、线程数等。
 
+### 配置文件
+
+应用的主要配置信息位于 `package.json` 文件中。以下是一个示例配置：
+
+```json
+{
+  "name": "electron-auto-run-jmx",
+  "version": "1.0.0",
+  "description": "A desktop application to automate the execution of JMeter test scripts.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder build --win",
+    "build:mac": "electron-builder build --mac",
+    "build:linux": "electron-builder build --linux"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^13.1.7",
+    "child_process": "^1.0.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "electron-builder": "^22.14.13"
+  }
+}
+```
+
+您可以根据需要修改 `package.json` 文件中的配置信息。
+
 ### 贡献
 
 欢迎贡献代码和提出改进建议！请遵循以下步骤：
 
 1. **Fork 仓库**：
-
    ```sh
    git clone https://github.com/<your-username>/Electron-autoRunJMX.git
    ```
 
 2. **创建分支**：
-
    ```sh
    git checkout -b feature/your-feature
    ```
 
 3. **提交更改**：
-
    ```sh
    git add .
    git commit -m "Add your feature"
